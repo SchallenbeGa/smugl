@@ -33,6 +33,9 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request)
     {
+        if ( captcha_check($request->captcha) == false ) {
+            return back()->with('captcha','incorrect captcha!');
+        }
         $request->validate([
             'name' => ['required', 'string', 'max:255','unique:'.User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],

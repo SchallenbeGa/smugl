@@ -28,6 +28,9 @@ class AuthenticatedSessionController extends Controller
      */
     public function store(LoginRequest $request)
     {
+        if ( captcha_check($request->captcha) == false ) {
+            return back()->with('captcha','incorrect captcha!');
+        }
         $request->authenticate();
         $request->session()->regenerate();
         return redirect()->intended(RouteServiceProvider::HOME);

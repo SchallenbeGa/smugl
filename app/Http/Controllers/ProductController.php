@@ -3,13 +3,32 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Category;
-use App\Product;
+use App\Models\Category;
+use App\Models\Product;
 
 class ProductController extends Controller
 {
     public function index(Category $category,Product $product)
     {  
+        return view('product.show', compact('product'));
+    }
+    public function create(Request $request)
+    {  
+        $request->validate([
+        'name' => ['required', 'string', 'max:255','unique:'.User::class],
+        'password' => ['required', 'confirmed', Rules\Password::defaults()],
+        'captcha' => ['required', 'captcha']
+        ]);
+
+        $product = User::create([
+            'name' => $request->name,
+            'password' => Hash::make($request->password),
+        ]);
+
+    event(new Registered($product));
+
+    }
+
         return view('product.show', compact('product'));
     }
     public function cart()
