@@ -9,6 +9,8 @@
     Secure webshop
     <br>
     <a href="https://github.com/SchallenbeGa/smugl/issues/new">Report bug</a>
+    <br>
+    <a target="_blank" href="https://gabriel0.com">DEMO</a>
   </p>
 </p>
 
