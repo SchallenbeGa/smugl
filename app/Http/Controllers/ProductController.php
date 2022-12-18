@@ -15,19 +15,15 @@ class ProductController extends Controller
     public function create(Request $request)
     {  
         $request->validate([
-        'name' => ['required', 'string', 'max:255','unique:'.User::class],
-        'password' => ['required', 'confirmed', Rules\Password::defaults()],
+        'name' => ['required', 'string', 'max:255'],
+        'description' => ['required', 'string', 'max:255'],
         'captcha' => ['required', 'captcha']
         ]);
 
-        $product = User::create([
+        $product = Product::create([
             'name' => $request->name,
-            'password' => Hash::make($request->password),
+            'description' => $request->description
         ]);
-
-    event(new Registered($product));
-
-    }
 
         return view('product.show', compact('product'));
     }
