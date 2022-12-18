@@ -38,6 +38,7 @@ incoming :
 * retrieve user info https://laravel.com/docs/9.x/requests (cloudfare db)
 * check pgp key for server and client side after login (todo)
 * exploit guard when laravel rotate (https://laravel.com/api/9.x/Illuminate/Auth/RequestGuard.html)
+* look at <a href="example_access_log.txt">log</a>
 
 ## What's included
 
