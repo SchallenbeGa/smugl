@@ -30,12 +30,21 @@
 - npm run dev
 - php artisan serve
 
+cron job : 
+key rotator to re-encrypt project with new key every hour
+https://laravel.com/docs/9.x/encryption
+
+incoming : 
+retrieve user info https://laravel.com/docs/9.x/requests (cloudfare db)
+check pgp key for server and client side after login (todo)
+exploit guard when laravel rotate (https://laravel.com/api/9.x/Illuminate/Auth/RequestGuard.html)
 
 ## What's included
 
 * https://github.com/mewebstudio/captcha
 * https://github.com/rawilk/laravel-app-key-rotator
-
+* https://github.com/spatie/crypto (pgp check & communicate)
+* https://github.com/spatie/laravel-permission
 
 ## Bugs and feature requests
 
