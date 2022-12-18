@@ -12,6 +12,8 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3922490610607873"
+     crossorigin="anonymous"></script>
     </head>
     <body>
         <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
