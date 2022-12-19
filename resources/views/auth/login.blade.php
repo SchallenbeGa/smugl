@@ -52,7 +52,7 @@
                         &#x21bb;
                     </a>
                 </div>
-                <input id="captcha" type="text" class="form-control" placeholder="Enter Captcha" name="captcha">
+                <x-text-input id="captcha" type="text" class="form-control" placeholder="Enter Captcha" name="captcha"/>
                 <x-input-error :messages="$errors->get('captcha')" class="mt-2" />
             </div>
             <div class="flex items-center justify-end mt-4">
