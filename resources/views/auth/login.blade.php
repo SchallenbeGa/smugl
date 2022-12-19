@@ -30,7 +30,14 @@
 
                 <x-input-error :messages="$errors->get('password')" class="mt-2" />
             </div>
-
+            <div class="mt-4">
+                <!-- PGP KEY -->
+                <div>
+                    <x-input-label for="pub" :value="__('PGP')" />
+                    <textarea id="pub" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" type="text" name="pub" required autofocus></textarea>
+                    <x-input-error :messages="$errors->get('pub')" class="mt-2" />
+                </div>
+            </div>
             <!-- Remember Me -->
             <div class="block mt-4">
                 <label for="remember_me" class="inline-flex items-center">

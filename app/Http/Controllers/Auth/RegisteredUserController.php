@@ -39,17 +39,25 @@ class RegisteredUserController extends Controller
         $request->validate([
             'name' => ['required', 'string', 'max:255','unique:'.User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'pub' => ['required', 'string','unique:'.User::class],
             'captcha' => ['required', 'captcha']
         ]);
+        /*
+        try{
+            Spatie\Crypto\Rsa\PublicKey::fromString($request->pub);
+        }catch(Exception $e){
+            dd($e);
+        }
+        */
+       
 
         $user = User::create([
             'name' => $request->name,
+            'pub' =>   base64_encode($request->pub),
             'password' => Hash::make($request->password),
         ]);
 
         event(new Registered($user));
-
-        Auth::login($user);
 
         return redirect(RouteServiceProvider::HOME);
     }

@@ -32,6 +32,15 @@ class AuthenticatedSessionController extends Controller
             return back()->with('captcha','incorrect captcha!');
         }
         $request->authenticate();
+        if (base64_decode(Auth::user()->pub) != $request->pub){
+            Auth::guard('web')->logout();
+
+            $request->session()->invalidate();
+    
+            $request->session()->regenerateToken();
+    
+            return redirect('/');
+        }
         $request->session()->regenerate();
         return redirect()->intended(RouteServiceProvider::HOME);
     }

@@ -32,6 +32,7 @@ class LoginRequest extends FormRequest
         return [
             'name' => ['required', 'string'],
             'password' => ['required', 'string'],
+            'pub'=> ['required', 'string'],
             'captcha' => ['required', 'captcha']
         ];
     }
@@ -47,7 +48,7 @@ class LoginRequest extends FormRequest
     {
         $this->ensureIsNotRateLimited();
 
-        if (! Auth::attempt($this->only('name', 'password'), $this->boolean('remember'))) {
+        if (! Auth::attempt($this->only('name', 'password'), $this->boolean('remember'))){
             RateLimiter::hit($this->throttleKey());
 
             throw ValidationException::withMessages([

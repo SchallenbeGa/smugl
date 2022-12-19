@@ -12,6 +12,7 @@
         "laravel/tinker": "^2.7",
         "mews/captcha": "^3.2",
         "rawilk/laravel-app-key-rotator": "^3.1",
+        "spatie/crypto": "^2.0",
         "spatie/laravel-permission": "^5.7"
     },
     "require-dev": {
