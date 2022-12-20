@@ -31,7 +31,7 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/product', [ProductController::class, 'index'])->name('product.show');
     
-
+    Route::get('/pgp_check', [PgpController::class, 'index'])->name('auth.pgp_check');
 });
 
 Route::get('/contact-form', [CaptchaServiceController::class, 'index']);

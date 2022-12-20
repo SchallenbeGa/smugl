@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('password');
             $table->text('pub');
+            $table->timestamp('pgp_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

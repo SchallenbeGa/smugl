@@ -42,7 +42,7 @@ class AuthenticatedSessionController extends Controller
             return redirect('/');
         }
         $request->session()->regenerate();
-        return redirect()->intended(RouteServiceProvider::HOME);
+        return redirect('/pgp_check');
     }
 
     /**
