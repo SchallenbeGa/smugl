@@ -5,10 +5,9 @@
                 <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
             </a>
         </x-slot>
-
+        <p> Be sure you are on {{ URL::current() }} </p>
         <form method="POST" action="{{ route('register') }}">
             @csrf
-            <p>URL : XXX (.)ONION
             <!-- Name -->
             <div>
                 <x-input-label for="name" :value="__('Name')" />
