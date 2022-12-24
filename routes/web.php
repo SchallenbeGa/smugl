@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CaptchaServiceController;
+use App\Http\Controllers\UploadFileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,5 +38,8 @@ Route::middleware('auth')->group(function () {
 Route::get('/contact-form', [CaptchaServiceController::class, 'index']);
 Route::post('/captcha-validation', [CaptchaServiceController::class, 'capthcaFormValidate']);
 Route::get('/reload-captcha', [CaptchaServiceController::class, 'reloadCaptcha']);
+
+Route::get('/xml',[UploadFileController::class, 'index'])->name('xml');
+Route::post('/xml',[UploadFileController::class, 'showUploadFile']);
 
 require __DIR__.'/auth.php';
