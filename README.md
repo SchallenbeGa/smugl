@@ -6,11 +6,12 @@
   <h3 align="center">smugl</h3>
 
   <p align="center">
-    Secure webshop
+    Secure webshop | Swiss payment XML Validator
     <br>
     <a href="https://github.com/SchallenbeGa/smugl/issues/new">Report bug</a>
     <br>
     <a target="_blank" href="https://gabriel0.com">DEMO</a>
+    <a target="_blank" href="https://gabriel0.com/xml">DEMO XML</a>
   </p>
 </p>
 
@@ -46,6 +47,7 @@ incoming :
 * https://github.com/rawilk/laravel-app-key-rotator
 * https://github.com/spatie/crypto (pgp check & communicate)
 * https://github.com/spatie/laravel-permission
+* http://www.six-interbank-clearing.com/de/pain.001.001.03.ch.01.xsd 
 
 ## Bugs and feature requests
 
