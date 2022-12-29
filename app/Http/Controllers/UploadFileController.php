@@ -49,6 +49,7 @@ class UploadFileController extends Controller
         //dd($request->file->get());
         $payments = new \SimpleXMLElement($request->file->path(),null,true);
         $payments = $payments->CstmrCdtTrfInitn->PmtInf;
+        $file_info = $payments->CstmrCdtTrfInitn->GrpHdr;
         //dd($payments);
         return view('xml_response', compact('msgs','payments'));
     }
