@@ -46,7 +46,7 @@ class UploadFileController extends Controller
             }
         }
         //print("Everything look good the problem is somewhere else");
-        dd($request->file->get());
+        //dd($request->file->get());
         $payments = new \SimpleXMLElement($request->file->path(),null,true);
         $payments = $payments->CstmrCdtTrfInitn->PmtInf;
         //dd($payments);
