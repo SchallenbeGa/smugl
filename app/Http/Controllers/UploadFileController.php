@@ -47,11 +47,15 @@ class UploadFileController extends Controller
         }
         //print("Everything look good the problem is somewhere else");
         //dd($request->file->get());
-        $payments = new \SimpleXMLElement($request->file->path(),null,true);
-        $payments = $payments->CstmrCdtTrfInitn->PmtInf;
-        $file_info = $payments->CstmrCdtTrfInitn->GrpHdr;
-        //dd($payments);
-        return view('xml_response', compact('msgs','payments'));
+        $file_uploaded = new \SimpleXMLElement($request->file->path(),null,true);
+        $payments = $file_uploaded->CstmrCdtTrfInitn->PmtInf;
+        $file_info = $file_uploaded->CstmrCdtTrfInitn->GrpHdr;
+        $sum = 0;
+        foreach ($payments->CdtTrfTxInf as $payment){
+            $sum += $payment->Amt->InstdAmt;
+        }
+        $payments->sum = $sum;
+        return view('xml_response', compact('msgs','payments','file_info'));
     }
     public function edit($file,$line,$old,$new) {
         $library = new \SimpleXMLElement($file,null,true);

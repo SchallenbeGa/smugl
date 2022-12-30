@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<Document xmlns="http://www.six-interbank-clearing.com/de/pain.001.001.03.ch.02.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.six-interbank-clearing.com/de/pain.001.001.03.ch.02.xsd pain.001.001.03.ch.02.xsd">
+	<CstmrCdtTrfInitn>
+		<GrpHdr>
+			<MsgId>PIAf600819921464b669a0e1c9342dda6e3</MsgId>
+			<CreDtTm>2022-09-01T08:18:31.904627Z</CreDtTm>
+			<NbOfTxs>1</NbOfTxs>
+			<CtrlSum>0.0</CtrlSum>
+			<InitgPty>
+				<Nm>Test</Nm>
+				<CtctDtls>
+					<Nm>Test</Nm>
+				</CtctDtls>
+			</InitgPty>
+		</GrpHdr>
+		<PmtInf>
+			<PmtInfId>PIB04dd94139fb04657beb2817ed9f46af8</PmtInfId>
+			<PmtMtd>TRF</PmtMtd>
+			<BtchBookg>false</BtchBookg>
+			<ReqdExctnDt>2022-10-03</ReqdExctnDt>
+			<Dbtr>
+				<Nm>John Doe</Nm>
+			</Dbtr>
+			<DbtrAcct>
+				<Id>
+					<IBAN>CH2600766000xxxxxxxx</IBAN>
+				</Id>
+			</DbtrAcct>
+			<DbtrAgt>
+				<FinInstnId>
+					<ClrSysMmbId>
+						<ClrSysId>
+							<Cd>CHBCC</Cd>
+						</ClrSysId>
+						<MmbId>766</MmbId>
+					</ClrSysMmbId>
+				</FinInstnId>
+			</DbtrAgt>
+			<CdtTrfTxInf>
+				<PmtId>
+					<InstrId>XXXX</InstrId>
+					<EndToEndId>NOTPROVIDED</EndToEndId>
+				</PmtId>
+				<PmtTpInf/>
+				<Amt>
+					<InstdAmt Ccy="CHF">45,65</InstdAmt>
+				</Amt>
+				<CdtrAgt>
+					<FinInstnId>
+						<ClrSysMmbId>
+							<ClrSysId>
+								<Cd>CHBCC</Cd>
+							</ClrSysId>
+							<MmbId>30000</MmbId>
+						</ClrSysMmbId>
+					</FinInstnId>
+				</CdtrAgt>
+				<Cdtr>
+					<Nm>Beneficiaire</Nm>
+					<PstlAdr>
+						<AdrLine>1009 Pully</AdrLine>
+					</PstlAdr>
+				</Cdtr>
+				<CdtrAcct>
+					<Id>
+						<IBAN>CH0930000001100014250</IBAN>
+					</Id>
+				</CdtrAcct>
+				<!-- On retrouve ci-dessous les compléments pour la QR !-->
+				<RmtInf>
+					<Strd> <!-- Intégration de la Prtry /QRR/ dans Strd/CdtrRefInf !-->
+						<CdtrRefInf>
+							<Tp>
+								<CdOrPrtry>
+									<Prtry>QRR</Prtry>
+								</CdOrPrtry>
+							</Tp>
+							<Ref>102211322091000167765000005</Ref>
+						</CdtrRefInf>
+					</Strd>
+				</RmtInf>
+			</CdtTrfTxInf>
+		</PmtInf>
+	</CstmrCdtTrfInitn>
+</Document>
