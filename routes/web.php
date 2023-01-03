@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CaptchaServiceController;
 use App\Http\Controllers\UploadFileController;
+use App\Http\Controllers\AudioController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -41,5 +42,7 @@ Route::get('/reload-captcha', [CaptchaServiceController::class, 'reloadCaptcha']
 
 Route::get('/xml',[UploadFileController::class, 'index'])->name('xml');
 Route::post('/xml',[UploadFileController::class, 'showUploadFile']);
+
+Route::get('/audio',[AudioController::class, 'index'])->name('audio');
 
 require __DIR__.'/auth.php';
